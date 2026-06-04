@@ -80,6 +80,12 @@ header p{
     border-radius: 2px;
 }
 
+.product{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
 .product:hover{
     transform:translateY(-5px);
 }
@@ -184,12 +190,12 @@ nav a:hover {
         min-height: 100vh;
     }
 
-    /* let products area grow to push footer down */
+    /* let products area grow to push footer down; keep two columns on small screens */
     .products {
         flex: 1 0 auto;
-        grid-template-columns: 1fr;
-        gap: 16px;
-        padding: 16px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 12px;
     }
 
     header {
