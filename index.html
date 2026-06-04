@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneakers</title>
+
+</head>
+<body>
+<style>
+body{
+    overflow-x: hidden;
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#080808;
+    color:white;
+}
+
+header{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    background:
+    linear-gradient(rgba(0,0,0,.6),
+    rgba(0,0,0,.6)),
+    url(images/Screenshot_20260603_112145_com.instagram.android_edit_80241641845567.jpg);
+
+    background-size:cover;
+    background-position:center;
+    border-bottom: 1px solid #ccc;;
+}
+
+header h1{
+    font-size: clamp(3rem,10vw,6.5rem);
+    margin:0;
+    letter-spacing:8px;
+}
+
+header p{
+    font-size:1.2rem;
+    letter-spacing:3px;
+}
+
+.article{
+    background:#111 !important;
+    color:white;
+    border:1px solid #222;
+}
+
+.card{
+    background:#181818 !important;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    transition:.3s;
+}
+
+button{
+    background:white;
+    color:black;
+    border:none;
+    padding:15px 30px;
+    width:auto;
+    cursor:pointer;
+    font-weight:bold;
+    max-width: 100%;
+    box-shadow: 5px 3px 4px rgba(8, 228, 8, 0.943);
+}
+
+button:hover{
+    background:#ddd;
+    color:black;
+}
+
+.article{
+    background:rgb(73, 62, 15);
+    border-radius:20px;
+    padding:40px;
+    margin:40px 0;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+    overflow: hidden;
+}
+
+.reverse{
+    grid-template-columns:1fr 1fr;
+}
+
+.article img{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.article h2{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.article p{
+    font-size:1.1rem;
+    line-height:1.8;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.article button{
+    width:auto;
+    padding:20px 35px;
+    margin-top:20px;
+    background:black;
+    color:white;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    box-shadow: 2px 2px 4px rgba(8, 228, 8, 0.943);
+}
+
+.article button:hover{
+    background: greenyellow;
+    color:#080808;
+
+}
+
+ul li{
+    font-size: 20px;
+}
+
+.container{
+    overflow:hidden;
+    width: auto;
+    border-radius: 8px;
+    background: rgb(244, 243, 243);
+    padding:20px 0;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+}
+
+.wrapper{
+    background: #ccc;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 12rem;
+    gap:2rem;
+    width: max-content;
+    animation: animate 10s linear infinite;
+}
+
+.wrapper img{
+    width: auto;
+    height: 14rem;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.wrapper:hover{
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+@keyframes animate{
+    to{
+        transform: translateX(calc(-5 * (12rem + 2rem)));
+    }
+}
+
+.wrapper img:hover{
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+.shop-cta{
+    text-align:center;
+    padding:80px 20px;
+    animation:fadeUp 1s ease;
+}
+
+.shop-cta h2{
+    font-size:3rem;
+    margin-bottom:10px;
+    color:white;
+}
+
+.shop-cta p{
+    color:#ccc;
+    margin-bottom:30px;
+    font-size:1.1rem;
+}
+
+.shop-cta button{
+    background:white;
+    color:black;
+    border:none;
+    padding:18px 40px;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:50px;
+    cursor:pointer;
+    transition:0.3s;
+    animation:pulse 2s infinite;
+}
+
+.shop-cta button:hover{
+    background: greenyellow;
+    transform:scale(1.08);
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.08);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        min-height: 70vh;
+        padding: 40px 20px;
+    }
+
+    .article,
+    .reverse {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .article img {
+        height: auto;
+    }
+
+    .article {
+        margin: 20px 0;
+    }
+
+    .container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .wrapper {
+        grid-auto-columns: 10rem;
+    }
+
+    .wrapper img {
+        height: 12rem;
+    }
+
+    .shop-cta {
+        padding: 50px 20px;
+    }
+
+    .shop-cta h2 {
+        font-size: 2.5rem;
+    }
+
+    .shop-cta button,
+    .article button,
+    button {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+</style>
+<header>
+    <h1>TUFF</h1>
+    <p>BUILT DIFFERENT. WORN TUFF.</p>
+
+    <button onclick="window.location.href='product.html'">
+        SHOP NOW
+    </button>
+</header>
+
+<section class="article">
+
+    <img src="images/Screenshot_20260603_111942_com.instagram.android_edit_80365748900757.jpg" alt="TUFF Shirt">
+
+    <div>
+        <h2>BUILT FOR THE HUSTLE</h2>
+
+        <p>
+            Every TUFF piece is designed for those who move with
+            confidence. Inspired by South African street culture
+            and the drive to stand out.
+        </p>
+        <strong><p>[YOUR OWN WORDS ABOUT YOUR BRAND]</p></strong>
+
+        <button onclick="window.location.href='product.html'">
+            OUR COLLECTION
+        </button>
+    </div>
+
+</section>
+
+<section class="article reverse">
+
+    <div>
+        <h2>MADE TO BE SEEN</h2>
+
+        <p>
+            From oversized tees to everyday essentials,
+            TUFF combines comfort and streetwear style
+            into one identity.
+        </p>
+
+        <strong><p>[ YOUR STORY HERE]</p></strong>
+    </div>
+
+    <img src="images/Screenshot_20260603_112152_com.instagram.android_edit_80219764174216.jpg" alt="TUFF Collection">
+
+
+    <button onclick="window.location.href='about.html'">
+            ABOUT US
+    </button>
+</section>
+
+<div class="container">
+    <div class="wrapper">
+        <img src="images/Screenshot_20260603_111919_com.instagram.android_edit_80393627650232.jpg" alt="image">
+        <img src="images/Screenshot_20260603_111932_com.instagram.android_edit_80374411600755.jpg" alt="image">
+        <img src="images/Screenshot_20260603_112135_com.instagram.android_edit_80291871428893.jpg" alt="image">
+        <img src="images/Screenshot_20260603_112038_com.instagram.android_edit_80356760362216.jpg" alt="image">
+        <img src="images/Screenshot_20260603_112152_com.instagram.android_edit_80219764174216.jpg" alt="image">
+
+       
+       <img src="images/Screenshot_20260603_111919_com.instagram.android_edit_80393627650232.jpg" aria-hidden="true">
+       <img src="images/Screenshot_20260603_111932_com.instagram.android_edit_80374411600755.jpg" aria-hidden="true">
+       <img src="images/Screenshot_20260603_112135_com.instagram.android_edit_80291871428893.jpg" aria-hidden="true">
+       <img src="images/Screenshot_20260603_112038_com.instagram.android_edit_80356760362216.jpg" aria-hidden="true">
+       <img src="images/Screenshot_20260603_112152_com.instagram.android_edit_80219764174216.jpg" aria-hidden="true">
+
+    </div>
+</div>
+
+<section class="article">
+    <h2>WHY TUFF?</h2>
+
+    <ul>
+        <li>Premium Quality</li>
+        <li>Street Inspired</li>
+        <li>Made To Stand Out</li>
+        <li>South African Brand</li>
+    </ul>
+</section>
+
+<section class="shop-cta">
+    <h2>READY TO STAND OUT?</h2>
+    <p>Discover the latest TUFF collection.</p>
+
+    <button onclick="window.location.href='product.html'">
+        SHOP NOW
+    </button>
+</section>
+
+<footer>
+    <h2>TUFF</h2>
+    <p>BUILT DIFFERENT. WORN TUFF</p>
+    <p>&copy; 2026 TUFF Streetwear. All rights reserved.</p>
+</footer>
+</body>
+</html>
