@@ -55,21 +55,7 @@ header h1 {
     letter-spacing: 2px;
 }
 
-header
-    width: auto;
-    text-align:center;
-    padding:60px 20px;
-    border-radius: 20px;
-    border-bottom: 3px solid #ccc;;
 
-}
-
-header h1
-    font-family: Arial;
-    color: #eee;
-    font-size:9rem;
-    letter-spacing:9px;
-}
 
 header p{
     color:#fef8f8;
@@ -182,6 +168,68 @@ nav a:hover {
     border-radius: 5px;
 }
 
+</style>
+<style>
+@media screen and (max-width: 600px) {
+    html, body {
+        -webkit-text-size-adjust: 100%;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* make page a column so footer stays bottom on short pages */
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    /* let products area grow to push footer down */
+    .products {
+        flex: 1 0 auto;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 16px;
+    }
+
+    header {
+        padding: 28px 14px;
+        min-height: auto;
+        background-position: center top;
+    }
+
+    header h1 {
+        font-size: clamp(1.8rem, 10vw, 3rem);
+        line-height: 1.05;
+    }
+
+    header p {
+        font-size: 0.95rem;
+        margin-bottom: 12px;
+    }
+
+    /* remove heavy background scaling that can trigger odd zoom on some phones */
+    body::before {
+        transform: none;
+        background-position: center top;
+        filter: blur(6px);
+        position: fixed;
+    }
+
+    .product img {
+        height: auto;
+        min-height: 180px;
+        object-fit: cover;
+    }
+
+    nav { padding: 10px 12px; }
+
+    footer { padding: 20px 12px; }
+
+    .order-btn { width: 100%; }
+
+    img { max-width: 100%; height: auto; display: block; }
+}
 </style>
 </head>
 <body>
